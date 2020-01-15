@@ -1,0 +1,22 @@
+{
+  "extends": "./base",
+  "compilerOptions": {
+    "target": "es6",
+    "jsx": "preserve",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es2019",
+      "es2015.collection"
+    ],
+    "sourceMap": true,
+    "removeComments": false,
+    "importHelpers": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  }
+}

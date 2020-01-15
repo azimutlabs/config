@@ -1,0 +1,12 @@
+{
+  "extends": "./base",
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "noEmit": false,
+    "lib": [
+      "es2019",
+      "es2015.collection"
+    ]
+  }
+}

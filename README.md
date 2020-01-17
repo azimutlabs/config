@@ -30,15 +30,15 @@ Extend via `package.eslintConfig`:
   // package.json
   "eslintConfig": {
     "extends": [
-      "@azimutlabs/config/eslint/legacy",
-      "@azimutlabs/config/eslint/react",
-      "@azimutlabs/config/eslint/jest"
+      "./node_modules/@azimutlabs/config/eslint/legacy",
+      "./node_modules/@azimutlabs/config/eslint/react",
+      "./node_modules/@azimutlabs/config/eslint/jest"
     ]
   }
 }
 ```
 
-## [`next.js`](next)
+## [`next.js`](next) **extendable**
 
 We assume that you already have `next` package installed.
 

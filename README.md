@@ -15,7 +15,6 @@ We assume that you already have `eslint` package installed.
   - download command: `npm i -D eslint-plugin-import @typescript-eslint/parser @typescript-eslint/eslint-plugin`
 + [`prettier`](eslint/prettier.json) - prettier config for eslint.
   - required libs: `prettier`, `eslint-config-prettier`, `eslint-plugin-prettier`
-  - comes with its own [`.prettierrc`](eslint/.prettierrc) config
   - download command: `npm i -D prettier eslint-config-prettier eslint-plugin-prettier`
 + [`jest`](eslint/jest.json) - jest specific rules.
   - required libs: `eslint-plugin-jest`

@@ -1,5 +1,8 @@
 # [`@azimutlabs/config`](https://www.npmjs.com/package/@azimutlabs/config)
 Config files and our code standards.
+```shell
+$ npm i -D @azimutlabs/config
+```
 
 ## [`gitignore`](.gitignore)
 
@@ -24,10 +27,9 @@ We assume that you already have `eslint` package installed.
   - download command: `npm i -D eslint-plugin-react eslint-plugin-react-hooks`
 
 #### Recommended usage
-Extend via `package.eslintConfig`:
+Extend via `package.json`:
 ```json
 {
-  // package.json
   "eslintConfig": {
     "extends": [
       "./node_modules/@azimutlabs/config/eslint/legacy",

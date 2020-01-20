@@ -20,17 +20,32 @@
     "url": "https://github.com/azimutlabs/config/issues"
   },
   "homepage": "https://github.com/azimutlabs/config#readme",
+  "eslintConfig": {
+    "extends": [
+      "./eslint/legacy",
+      "./eslint/prettier",
+      "./eslint/react",
+      "./eslint/a11y"
+    ]
+  },
   "devDependencies": {
+    "@types/classnames": "^2.2.9",
     "@types/node": "^13.1.4",
     "@types/react": "^16.9.17",
     "@typescript-eslint/eslint-plugin": "^2.13.0",
     "@typescript-eslint/parser": "^2.13.0",
+    "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
+    "babel-eslint": "^10.0.3",
+    "classnames": "^2.2.6",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^3.0.3",
     "eslint-plugin-css-modules": "^2.11.0",
     "eslint-plugin-import": "^2.19.1",
     "eslint-plugin-jest": "^23.2.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",

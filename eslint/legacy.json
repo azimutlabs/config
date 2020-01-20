@@ -1,4 +1,8 @@
 {
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
   "extends": ["eslint:recommended"],
   "plugins": ["import"],
   "env": {
@@ -112,7 +116,6 @@
       "error",
       {
         "ignoreCase": true,
-        "ignoreDeclarationSort": true,
         "memberSyntaxSortOrder": [
           "all",
           "single",

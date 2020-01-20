@@ -14,7 +14,8 @@ We assume that you already have `eslint` package installed.
 
 + [`legacy`](eslint/legacy.json) - default lint rules with some plugin extensions.
   - required libs: `eslint-plugin-import`
-  - required libs for `typescript`: `@typescript-eslint/parser`, `@typescript-eslint/eslint-plugin`
+  - required libs for **javascript**: `babel-eslint`
+  - required libs for **typescript**: `@typescript-eslint/parser`, `@typescript-eslint/eslint-plugin`
   - download command: `npm i -D eslint-plugin-import @typescript-eslint/parser @typescript-eslint/eslint-plugin`
 + [`prettier`](eslint/prettier.json) - prettier config for eslint.
   - required libs: `prettier`, `eslint-config-prettier`, `eslint-plugin-prettier`
@@ -25,6 +26,9 @@ We assume that you already have `eslint` package installed.
 + [`react`](eslint/react.json) - react specific rules with extensions.
   - required libs: `eslint-plugin-react`, `eslint-plugin-react-hooks`
   - download command: `npm i -D eslint-plugin-react eslint-plugin-react-hooks`
++ [`a11y`](eslint/a11y.json) - jsx accessibility.
+  - required libs: `eslint-plugin-jsx-a11y`
+  - download command: `npm i -D eslint-plugin-jsx-a11y`
 
 #### Recommended usage
 Extend via `package.json`:
@@ -53,7 +57,29 @@ We assume that you already have `next` package installed.
     });
     ```
   - to enable `sass-lint` - add `sassLintOptions` field into `nextOptions` as shown in `usage` section.
-  - required libs: `@zeit/next-sass`, with sass-lint: `sass-lint`, `sass-lint-webpack`
+  - required libs: `@zeit/next-sass`
+  - required libs for sass-lint: `sass-lint`, `sass-lint-webpack`
   - download command: `npm i -D @zeit/next-sass`
+
++ [`withEslint`](next/withEslint.js) - adds `eslint`.
+  - usage:
+    ```javascript
+    // next.config.js
+    module.exports = withEslint({ // nextOptions
+      eslintOptions: {} // options for eslint-loader
+    });
+    ```
+  - required libs: `eslint-loader`, `eslint-friendly-formatter` and `eslint` if you not already have it.
+  - download command: `npm i -D eslint-loader eslint-friendly-formatter`
+
+#### Recommended usage
+Combine by composing functions:
+```javascript
+module.exports = withSass(withEslint({
+  // nextConfig
+  // withSassOptions
+  // withEslintOptions
+}));
+```
 
 ## [`LICENSE`](LICENSE)

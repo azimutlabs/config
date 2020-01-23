@@ -14,7 +14,7 @@ module.exports = (nextConfig = {}) =>
           config.plugins.push(new SassLintPlugin(nextConfig.sassLintOptions));
         }
 
-        if (rule.test.toString().includes('.scss')) {
+        if (rule.test && rule.test.toString().includes('.scss')) {
           rule.rules = rule.use.map(useRule => {
             if (typeof useRule === 'string') {
               return { loader: useRule };

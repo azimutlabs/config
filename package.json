@@ -1,6 +1,6 @@
 {
   "name": "@azimutlabs/config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Config files and our code standards",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

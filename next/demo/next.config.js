@@ -1,4 +1,5 @@
 const withEslint = require('../withEslint');
 const withSass = require('../withSass');
+const withEnv = require('../withEnv');
 
-module.exports = withEslint(withSass());
+module.exports = withEnv(withEslint(withSass()));

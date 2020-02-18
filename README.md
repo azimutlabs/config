@@ -105,11 +105,14 @@ We assume that you already have `next` package installed.
 #### Recommended usage
 Combine by composing functions:
 ```javascript
-module.exports = withSass(withEslint({
-  // nextConfig
-  // withSassOptions
-  // withEslintOptions
-}));
+module.exports = compose(
+  withEslint,
+  withSass,
+  withEnv,
+)({ // next config
+  eslintConfig: {},
+  sassLintConfig: {},
+});
 ```
 
 ## [`LICENSE`](LICENSE)

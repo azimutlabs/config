@@ -61,7 +61,6 @@
     "webpack": "^4.41.5"
   },
   "dependencies": {
-    "dotenv": "^8.2.0",
     "dotenv-load": "^2.0.0"
   }
 }

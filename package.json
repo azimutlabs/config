@@ -39,6 +39,7 @@
     "autoprefixer": "^9.7.4",
     "babel-eslint": "^10.0.3",
     "classnames": "^2.2.6",
+    "dotenv-load": "^2.0.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-friendly-formatter": "^4.0.1",
@@ -59,8 +60,5 @@
     "sass-lint-webpack": "^1.0.2",
     "typescript": "^3.7.4",
     "webpack": "^4.41.5"
-  },
-  "dependencies": {
-    "dotenv-load": "^2.0.0"
   }
 }

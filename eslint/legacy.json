@@ -12,6 +12,12 @@
   },
   "overrides": [
     {
+      "files": ["**/*.d.ts"],
+      "rules": {
+        "spaced-comment": "off"
+      }
+    },
+    {
       "files": ["**/*.ts?(x)"],
       "parser": "@typescript-eslint/parser",
       "extends": ["plugin:@typescript-eslint/recommended"],

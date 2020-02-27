@@ -1,0 +1,30 @@
+{
+  "name": "@azimutlabs/eslint-config",
+  "version": "0.1.0-beta.1",
+  "description": "Sharable ESLint configurations used in our projects",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azimutlabs/config.git",
+    "directory": "packages/eslint-config-alabs"
+  },
+  "main": "index.js",
+  "files": [
+    "*.js"
+  ],
+  "keywords": [
+    "config",
+    "eslint",
+    "eslintrc",
+    "eslint-config",
+    "alabs"
+  ],
+  "author": "AzimutLabs <npm@alabs.team>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/azimutlabs/config/issues"
+  },
+  "homepage": "https://github.com/azimutlabs/config/tree/master/packages/eslint-config-alabs#readme",
+  "peerDependencies": {
+    "eslint": "^6.8.0"
+  }
+}

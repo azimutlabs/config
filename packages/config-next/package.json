@@ -1,0 +1,32 @@
+{
+  "name": "@azimutlabs/config-next",
+  "version": "0.1.0-beta.1",
+  "description": "Next.js config extensions",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azimutlabs/config.git",
+    "directory": "packages/config-next"
+  },
+  "files": [
+    "*.js"
+  ],
+  "keywords": [
+    "config",
+    "config-files",
+    "next.js",
+    "next",
+    "next.config",
+    "next.config.js",
+    "next-config",
+    "alabs"
+  ],
+  "author": "AzimutLabs <npm@alabs.team>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/azimutlabs/config/issues"
+  },
+  "homepage": "https://github.com/azimutlabs/config/tree/master/packages/next-config#readme",
+  "peerDependencies": {
+    "next": "^9.2.2"
+  }
+}

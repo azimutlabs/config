@@ -1,10 +1,7 @@
 {
   "name": "@azimutlabs/config",
   "version": "1.0.1",
-  "description": "Config files and our code standards",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Mono-repo for our sharable configs",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/azimutlabs/config.git"
@@ -22,10 +19,7 @@
   "homepage": "https://github.com/azimutlabs/config#readme",
   "eslintConfig": {
     "extends": [
-      "./eslint/legacy",
-      "./eslint/prettier",
-      "./eslint/react",
-      "./eslint/a11y"
+      "./packages/eslint-config"
     ]
   },
   "devDependencies": {

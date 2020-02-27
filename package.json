@@ -45,6 +45,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
+    "lerna": "^3.20.2",
     "next": "^9.1.7",
     "node-sass": "^4.13.0",
     "prettier": "^1.19.1",

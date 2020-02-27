@@ -1,6 +1,6 @@
 {
   "name": "@azimutlabs/config",
-  "version": "1.0.1",
+  "version": "2.0.0-alpha.1",
   "description": "Mono-repo for our sharable configs",
   "repository": {
     "type": "git",

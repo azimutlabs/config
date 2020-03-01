@@ -17,10 +17,15 @@ module.exports = {
     ecmaVersion: 6
   },
   extends: [
-    'eslint:recommended'
+    'eslint:recommended',
+    'plugin:array-func/all',
+    'plugin:functional/recommended'
   ],
   plugins: [
-    'import'
+    'import',
+    'array-func',
+    'functional',
+    'simple-import-sort'
   ],
   env: {
     commonjs: true,
@@ -99,12 +104,6 @@ module.exports = {
         '@typescript-eslint/no-extraneous-class': 'error',
         '@typescript-eslint/no-for-in-array': 'error',
         '@typescript-eslint/no-explicit-any': 'error',
-        '@typescript-eslint/no-empty-interface': [
-          'warn',
-          {
-            allowSingleExtends: true
-          }
-        ],
         '@typescript-eslint/explicit-function-return-type': [
           'error',
           {
@@ -119,7 +118,22 @@ module.exports = {
   rules: {
     'import/first': 'error',
     'import/no-amd': 'error',
+    'import/no-duplicates': 'error',
+    'import/newline-after-import': 'error',
     'import/no-webpack-loader-syntax': 'error',
+    'simple-import-sort/sort': 'error',
+    'functional/no-conditional-statement': [
+      'error',
+      {
+        allowReturningBranches: true
+      }
+    ],
+    'functional/functional-parameters': [
+      'error',
+      {
+        'enforceParameterCount': false,
+      }
+    ],
     'space-before-function-paren': [
       'error',
       {
@@ -140,18 +154,6 @@ module.exports = {
       {
         array: true,
         object: true
-      }
-    ],
-    'sort-imports': [
-      'error',
-      {
-        ignoreCase: true,
-        memberSyntaxSortOrder: [
-          'all',
-          'single',
-          'multiple',
-          'none'
-        ]
       }
     ],
     'arrow-body-style': [
@@ -196,7 +198,7 @@ module.exports = {
       'property'
     ],
     eqeqeq: [
-      'warn',
+      'error',
       'smart'
     ],
     'new-parens': 'warn',
@@ -312,8 +314,7 @@ module.exports = {
     'no-unused-vars': [
       'warn',
       {
-        args: 'none',
-        ignoreRestSiblings: true
+        args: 'after-used',
       }
     ],
     'no-use-before-define': [
@@ -356,14 +357,11 @@ module.exports = {
       {
         object: 'require',
         property: 'ensure',
-        message: 'Please use import() instead. More info: https://facebook.github.io/create-react-app/docs/code-splitting'
       },
       {
         object: 'System',
         property: 'import',
-        message: 'Please use import() instead. More info: https://facebook.github.io/create-react-app/docs/code-splitting'
       }
-    ],
-    'getter-return': 'warn'
+    ]
   }
 };

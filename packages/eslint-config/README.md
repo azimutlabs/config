@@ -4,10 +4,12 @@ Sharable ESLint configurations used in our projects.
 We assume that you already have `eslint` package installed.
 
 + [`legacy`](legacy.js) - default lint rules with some plugin extensions.
-  - required libs: `eslint-plugin-import`
+  - required libs: `eslint-plugin-import`, `eslint-plugin-array-func`, `eslint-plugin-functional`, `eslint-plugin-simple-import-sort`
   - required libs for **javascript**: `babel-eslint`
   - required libs for **typescript**: `@typescript-eslint/parser`, `@typescript-eslint/eslint-plugin`
-  - download command: `npm i -D eslint-plugin-import @typescript-eslint/parser @typescript-eslint/eslint-plugin`
+  - download command: `npm i -D
+    eslint-plugin-import eslint-plugin-functional eslint-plugin-fp eslint-plugin-simple-import-sort
+    @typescript-eslint/parser @typescript-eslint/eslint-plugin`
 + [`prettier`](prettier.js) - prettier config for eslint.
   - required libs: `prettier`, `eslint-config-prettier`, `eslint-plugin-prettier`
   - download command: `npm i -D prettier eslint-config-prettier eslint-plugin-prettier`

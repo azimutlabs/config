@@ -1,4 +1,4 @@
-# eslint-config-eslint
+# @azimutlabs/eslint-config
 Sharable ESLint configurations used in our projects.
 
 We assume that you already have `eslint` package installed.

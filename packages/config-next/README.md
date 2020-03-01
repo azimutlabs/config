@@ -57,6 +57,18 @@ We assume that you already have `next` package installed.
     ```
   - recommended libs: [`dotenv-load`](https://www.npmjs.com/package/dotenv-load)
 
++ [`withLodash`](withLodash.js) - optimizes `lodash` dist size using `babel-plugin-lodash` and `lodash-webpack-plugin`.
+  - usage:
+    ```javascript
+    // next.config.js
+    module.exports = withLodash({ // nextOptions
+      babelPluginLodashOptions: {}, // babel-plugin-lodash options.
+      lodashWebpackPluginOptions: {}, // lodash-webpack-plugin options.
+    });
+    ```
+  - required libs: `babel-plugin-lodash`, `lodash-webpack-plugin`.
+  - download command: `npm i -D babel-plugin-lodash lodash-webpack-plugin`
+
 #### Recommended usage
 Combine by composing functions:
 ```javascript

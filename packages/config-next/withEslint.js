@@ -17,7 +17,7 @@ const formatter = require('eslint-friendly-formatter');
 module.exports = (nextConfig = {}) => ({
   ...nextConfig,
   webpack: (config, options) => {
-    const { eslintOptions = {} } = config;
+    const { eslintOptions = {} } = nextConfig;
 
     config.module.rules.push({
       test: /\.(js|jsx|ts|tsx)$/,

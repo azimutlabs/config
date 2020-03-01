@@ -17,5 +17,6 @@ module.exports = {
     './jest',
     './react',
     './legacy',
+    './prettier',
   ].map(require.resolve),
 };

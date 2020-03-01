@@ -11,6 +11,9 @@
 
 'use strict';
 
+const defaultServerRuntimePrefix = 'NEXT_SERVER_';
+const defaultPublicRuntimePrefix = 'NEXT_PUBLIC_';
+
 module.exports = (nextConfig = {}) => {
   const filterEnvByPrefix = prefix =>
     Object.keys(process.env)
@@ -20,8 +23,8 @@ module.exports = (nextConfig = {}) => {
   const { SERVER_PREFIX, PUBLIC_PREFIX } = process.env;
 
   const {
-    serverRuntimePrefix = SERVER_PREFIX || 'NEXT_SERVER_',
-    publicRuntimePrefix = PUBLIC_PREFIX || 'NEXT_PUBLIC_',
+    serverRuntimePrefix = SERVER_PREFIX || defaultServerRuntimePrefix,
+    publicRuntimePrefix = PUBLIC_PREFIX || defaultPublicRuntimePrefix,
   } = nextConfig;
 
   const serverRuntimeConfig = nextConfig.serverRuntimeConfig || {};

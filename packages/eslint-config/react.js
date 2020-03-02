@@ -48,6 +48,7 @@ module.exports = {
     'react/jsx-no-comment-textnodes': 'warn',
     'react/jsx-no-duplicate-props': 'warn',
     'react/jsx-no-target-blank': 'warn',
+    'react/jsx-no-bind': 'warn',
     'react/jsx-no-undef': 'error',
     'react/jsx-pascal-case': [
       'warn',

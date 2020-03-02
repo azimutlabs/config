@@ -19,7 +19,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:array-func/all',
-    'plugin:functional/recommended'
+    'plugin:functional/lite'
   ],
   plugins: [
     'import',
@@ -90,8 +90,7 @@ module.exports = {
         '@typescript-eslint/no-unused-vars': [
           'warn',
           {
-            args: 'none',
-            ignoreRestSiblings: true
+            args: 'after-used'
           }
         ],
         'no-useless-constructor': 'off',
@@ -122,12 +121,6 @@ module.exports = {
     'import/newline-after-import': 'error',
     'import/no-webpack-loader-syntax': 'error',
     'simple-import-sort/sort': 'error',
-    'functional/no-conditional-statement': [
-      'error',
-      {
-        allowReturningBranches: true
-      }
-    ],
     'functional/functional-parameters': [
       'error',
       {
@@ -173,6 +166,8 @@ module.exports = {
       'error',
       'always'
     ],
+    'no-console': 'warn',
+    'no-debugger': 'warn',
     'newline-per-chained-call': 'error',
     'no-param-reassign': 'error',
     'no-var': 'error',

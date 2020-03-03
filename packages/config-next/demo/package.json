@@ -5,5 +5,16 @@
   "license": "ISC",
   "babel": {
     "presets": ["next/babel"]
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard"
+    ],
+    "rules": {
+      "no-empty-source": null,
+      "declaration-empty-line-before": null,
+      "no-missing-end-of-source-newline": null,
+      "no-eol-whitespace": null
+    }
   }
 }

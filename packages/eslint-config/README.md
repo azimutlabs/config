@@ -3,6 +3,7 @@ Sharable ESLint configurations used in our projects.
 
 We assume that you already have `eslint` package installed.
 
+#### Available configurations
 + [`legacy`](legacy.js) - default lint rules with some plugin extensions.
   - required libs: `eslint-plugin-import`, `eslint-plugin-array-func`, `eslint-plugin-functional`, `eslint-plugin-simple-import-sort`
   - required libs for **javascript**: `babel-eslint`

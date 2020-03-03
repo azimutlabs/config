@@ -3,6 +3,7 @@ Next.js config extensions.
 
 We assume that you already have `next` package installed.
 
+#### Available extensions
 + [`withEslint`](withEslint.js) - adds `eslint`.
   - usage:
     ```javascript

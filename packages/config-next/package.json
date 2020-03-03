@@ -1,6 +1,6 @@
 {
   "name": "@azimutlabs/config-next",
-  "version": "0.1.0-beta.2",
+  "version": "0.1.0",
   "description": "Next.js config extensions",
   "repository": {
     "type": "git",

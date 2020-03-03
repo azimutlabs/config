@@ -11,7 +11,7 @@
   />
 </h1>
 
----
+> Our sharable configurations and code standards
 
 ## [`@azimutlabs/eslint-config`](packages/eslint-config) [![@azimutlabs/eslint-config package version](https://img.shields.io/npm/v/@azimutlabs/eslint-config)](https://www.npmjs.com/package/@azimutlabs/eslint-config)
 <details>
@@ -78,6 +78,10 @@
   ---
 
   We assume that you already have `next` package installed.
+
+  ```shell
+  $ npm i -D @azimutlabs/config-next
+  ```
 
   #### Available extensions
   + [`withEslint`](withEslint.js) - adds `eslint`.

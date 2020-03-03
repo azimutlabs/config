@@ -121,6 +121,12 @@ module.exports = {
     'import/newline-after-import': 'error',
     'import/no-webpack-loader-syntax': 'error',
     'simple-import-sort/sort': 'error',
+    'functional/immutable-data': [
+      'error',
+      {
+        'ignorePattern': 'module.exports',
+      }
+    ],
     'functional/functional-parameters': [
       'error',
       {

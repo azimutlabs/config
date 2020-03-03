@@ -1,0 +1,9 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "author": "AzimutLabs <npm@alabs.team>",
+  "license": "ISC",
+  "babel": {
+    "presets": ["next/babel"]
+  }
+}

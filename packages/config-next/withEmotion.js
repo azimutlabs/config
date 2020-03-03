@@ -11,26 +11,21 @@
 
 'use strict';
 
-const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const { injectBabelOptions, withWebpack } = require('./utils');
 
-const babelPluginLodash = 'lodash';
+const babelPresetEmotion = '@emotion/babel-preset-css-prop';
 
 /**
- * Optimizes `lodash` dist size using `babel-plugin-lodash` and `lodash-webpack-plugin`.
  * @param {Object} nextConfig
- * @param {Object} [nextConfig.babelPluginLodashOptions]
- * @param {Object} [nextConfig.lodashWebpackPluginOptions]
+ * @param {Object} [nextConfig.babelPresetEmotionOptions]
  * @param {function(config: Object, options: Object)} [nextConfig.webpack]
- * @returns {Object}
  */
 module.exports = (nextConfig = {}) => ({
   ...nextConfig,
   webpack: (config, options) => {
-    const { babelPluginLodashOptions = {}, lodashWebpackPluginOptions } = nextConfig;
-    config.plugins.push(new LodashModuleReplacementPlugin(lodashWebpackPluginOptions));
+    const { babelPresetEmotionOptions = {} } = nextConfig;
     injectBabelOptions(config, {
-      plugins: [[babelPluginLodash, babelPluginLodashOptions]],
+      presets: [[babelPresetEmotion, babelPresetEmotionOptions]],
     });
     return withWebpack(nextConfig, config, options);
   },

@@ -12,7 +12,15 @@
 'use strict';
 
 const withSass = require('@zeit/next-sass');
+const { withWebpack } = require('./utils');
 
+/**
+ * @deprecated - we are planning to move into CSS in JS practise.
+ * @param {Object} nextConfig
+ * @param {Object} [nextConfig.sassLintOptions]
+ * @param {function(config: Object, options: Object)} [nextConfig.webpack]
+ * @returns {Object}
+ */
 module.exports = (nextConfig = {}) =>
   withSass({
     ...nextConfig,
@@ -53,7 +61,6 @@ module.exports = (nextConfig = {}) =>
         }
       });
 
-      if (typeof nextConfig.webpack === 'function') return nextConfig.webpack(config, options);
-      return config;
+      return withWebpack(nextConfig, config, options);
     },
   });

@@ -15,7 +15,8 @@ const withSass = require('@zeit/next-sass');
 const { withWebpack } = require('./utils');
 
 /**
- * @deprecated - we are planning to move into CSS in JS practise.
+ * Adds `scss`, `scss-modules`, `sass-lint` (no `css`)
+ * @deprecated - we are planning to move into CSS in JS practise, so for now this extension is no longer maintained.
  * @param {Object} nextConfig
  * @param {Object} [nextConfig.sassLintOptions]
  * @param {function(config: Object, options: Object)} [nextConfig.webpack]

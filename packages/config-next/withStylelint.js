@@ -15,6 +15,7 @@ const { withWebpack } = require('./utils');
 const filesPattern = ['**/*.{ts,tsx,js,jsx}', '**/*.s?(a|c)ss'];
 
 /**
+ * Adds `stylelint-webpack-plugin` for `stylelint`.
  * @param {Object} nextConfig
  * @param {Object} [nextConfig.stylelintWebpackPluginOptions]
  * @param {function(config: Object, options: Object)} [nextConfig.webpack]

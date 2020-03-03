@@ -14,6 +14,14 @@
 const defaultServerRuntimePrefix = 'NEXT_SERVER_';
 const defaultPublicRuntimePrefix = 'NEXT_PUBLIC_';
 
+/**
+ * @param {Object} nextConfig
+ * @param {string} [nextConfig.serverRuntimePrefix]
+ * @param {string} [nextConfig.publicRuntimePrefix]
+ * @param {string} [nextConfig.serverRuntimeConfig]
+ * @param {string} [nextConfig.publicRuntimeConfig]
+ * @returns {Object}
+ */
 module.exports = (nextConfig = {}) => {
   const filterEnvByPrefix = prefix =>
     Object.keys(process.env)

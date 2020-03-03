@@ -12,30 +12,24 @@
 'use strict';
 
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const { injectBabelPlugin, withWebpack } = require('./utils');
 
-const nextBabelLoader = 'next-babel-loader';
 const babelPluginLodash = 'lodash';
 
+/**
+ * Optimizes `lodash` dist size using `babel-plugin-lodash` and `lodash-webpack-plugin`.
+ * @param {Object} nextConfig
+ * @param {Object} [nextConfig.babelPluginLodashOptions]
+ * @param {Object} [nextConfig.lodashWebpackPluginOptions]
+ * @param {function(config: Object, options: Object)} [nextConfig.webpack]
+ * @returns {Object}
+ */
 module.exports = (nextConfig = {}) => ({
   ...nextConfig,
   webpack: (config, options) => {
     const { babelPluginLodashOptions = {}, lodashWebpackPluginOptions } = nextConfig;
-
     config.plugins.push(new LodashModuleReplacementPlugin(lodashWebpackPluginOptions));
-
-    const rule = config.module.rules.find(n => n && n.use && n.use.loader === nextBabelLoader);
-
-    if (rule) {
-      rule.use.options.plugins = rule.use.options.plugins || [];
-
-      if (!rule.use.options.plugins.find(n => n === babelPluginLodash)) {
-        rule.use.options.plugins.push([babelPluginLodash, babelPluginLodashOptions]);
-      }
-    } else {
-      console.error(`Couldn't find 'rule' with loader equals to '${nextBabelLoader}'`);
-    }
-
-    if (typeof nextConfig.webpack === 'function') return nextConfig.webpack(config, options);
-    return config;
+    injectBabelPlugin(config)([babelPluginLodash, babelPluginLodashOptions]);
+    return withWebpack(nextConfig, config, options);
   },
 });

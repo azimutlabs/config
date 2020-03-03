@@ -13,12 +13,18 @@
 
 const path = require('path');
 const formatter = require('eslint-friendly-formatter');
+const { withWebpack } = require('./utils');
 
+/**
+ * @param {Object} nextConfig
+ * @param {Object} [nextConfig.eslintOptions]
+ * @param {function(config: Object, options: Object)} [nextConfig.webpack]
+ * @returns {Object}
+ */
 module.exports = (nextConfig = {}) => ({
   ...nextConfig,
   webpack: (config, options) => {
     const { eslintOptions = {} } = nextConfig;
-
     config.module.rules.push({
       test: /\.(js|jsx|ts|tsx)$/,
       loader: 'eslint-loader',
@@ -34,8 +40,6 @@ module.exports = (nextConfig = {}) => ({
         ...eslintOptions,
       },
     });
-
-    if (typeof nextConfig.webpack === 'function') return nextConfig.webpack(config, options);
-    return config;
+    return withWebpack(nextConfig, config, options);
   },
 });

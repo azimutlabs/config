@@ -14,22 +14,27 @@
 const nextBabelLoader = 'next-babel-loader';
 
 /**
- * @param {Object} config - webpack config.
- * @returns {function(plugin: [string, Object], babelLoader: string)}
+ * @param {Object} webpackConfig - webpack config.
+ * @param {Object} babelOptions
+ * @param {string} [babelOptions.babelLoaderName=nextBabelLoader] - name of the loader that will be modified.
+ * @param {Array.<(string|[string, Object])>} [babelOptions.presets]
+ * @param {Array.<(string|[string, Object])>} [babelOptions.plugins]
  */
-const injectBabelPlugin = config => (plugin, babelLoader = nextBabelLoader) => {
-  const rule = config.module.rules.find(n => n && n.use && n.use.loader === babelLoader);
+const injectBabelOptions = (webpackConfig, babelOptions) => {
+  const { babelLoaderName = nextBabelLoader, plugins = [], presets = [] } = babelOptions;
+  const rule = webpackConfig.module.rules.find(n => n && n.use && n.use.loader === babelLoaderName);
 
-  if (rule) {
-    rule.use.options.plugins = rule.use.options.plugins || [];
-    const [pluginName] = plugin;
-
-    if (!rule.use.options.plugins.find(n => n === pluginName)) {
-      rule.use.options.plugins.push(plugin);
-    }
-  } else {
-    console.error(`Couldn't find 'rule' with loader equals to '${nextBabelLoader}'`);
+  if (!rule) {
+    return console.error(`Couldn't find 'rule' with loader equals to '${nextBabelLoader}'`);
   }
+
+  const { options = {} } = rule.use;
+
+  options.plugins = options.plugins || [];
+  options.presets = options.presets || [];
+
+  options.plugins = options.plugins.concat(plugins);
+  options.presets = options.presets.concat(presets);
 };
 
 /**
@@ -51,7 +56,7 @@ const withWebpack = (nextConfig, webpackConfig, webpackOptions) => {
 };
 
 module.exports = {
-  injectBabelPlugin,
+  injectBabelOptions,
   withWebpack,
   compose,
 };

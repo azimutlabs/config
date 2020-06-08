@@ -1,73 +1,64 @@
 {
   "name": "@azimutlabs/config",
   "version": "2.0.0-alpha.1",
+  "private": true,
   "description": "Mono-repo for our sharable configs",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/azimutlabs/config.git"
-  },
   "keywords": [
     "config",
     "config-files",
     "alabs"
   ],
-  "author": "AzimutLabs <npm@alabs.team>",
-  "license": "MIT",
+  "homepage": "https://github.com/azimutlabs/config#readme",
   "bugs": {
     "url": "https://github.com/azimutlabs/config/issues"
   },
-  "homepage": "https://github.com/azimutlabs/config#readme",
-  "eslintConfig": {
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azimutlabs/config.git"
+  },
+  "license": "MIT",
+  "author": "AzimutLabs <npm@alabs.team>",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "compile": "lerna run compile",
+    "lerna": "lerna publish --conventional-commits --create-release github"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
     "extends": [
-      "./packages/eslint-config"
+      "@commitlint/config-conventional",
+      "@commitlint/config-lerna-scopes"
     ]
   },
+  "lint-staged": {
+    "**/*.{ts,tsx}": "eslint --no-ignore --cache --max-warnings 0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@azimutlabs"
+    ]
+  },
+  "eslintIgnore": [
+    "**/node_modules",
+    "**/lib"
+  ],
   "devDependencies": {
-    "@emotion/babel-preset-css-prop": "^10.0.27",
-    "@emotion/core": "^10.0.28",
-    "@emotion/styled": "^10.0.27",
-    "@next/bundle-analyzer": "^9.2.2",
-    "@types/classnames": "^2.2.9",
-    "@types/lodash": "^4.14.149",
-    "@types/node": "^13.1.4",
-    "@types/react": "^16.9.17",
-    "@typescript-eslint/eslint-plugin": "^2.13.0",
-    "@typescript-eslint/parser": "^2.13.0",
-    "@zeit/next-css": "^1.0.1",
-    "@zeit/next-sass": "^1.0.1",
-    "autoprefixer": "^9.7.4",
-    "babel-eslint": "^10.0.3",
-    "babel-plugin-lodash": "^3.3.4",
-    "classnames": "^2.2.6",
-    "dotenv-load": "^2.0.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.9.0",
-    "eslint-friendly-formatter": "^4.0.1",
-    "eslint-loader": "^3.0.3",
-    "eslint-plugin-array-func": "^3.1.4",
-    "eslint-plugin-css-modules": "^2.11.0",
-    "eslint-plugin-functional": "^3.0.1",
-    "eslint-plugin-import": "^2.19.1",
-    "eslint-plugin-jest": "^23.2.0",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.17.0",
-    "eslint-plugin-react-hooks": "^2.3.0",
-    "eslint-plugin-simple-import-sort": "^5.0.1",
-    "lerna": "^3.20.2",
-    "lodash": "^4.17.15",
-    "lodash-webpack-plugin": "^0.11.5",
-    "next": "^9.1.7",
-    "node-sass": "^4.13.1",
-    "prettier": "^1.19.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "sass-lint": "^1.13.1",
-    "sass-lint-webpack": "^1.0.2",
-    "stylelint": "^13.2.0",
-    "stylelint-config-standard": "^20.0.0",
-    "stylelint-webpack-plugin": "^1.2.3",
-    "typescript": "^3.8.3",
-    "webpack": "^4.41.5"
+    "@azimutlabs/eslint-config": "^0.1.1",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@commitlint/config-lerna-scopes": "^8.3.4",
+    "eslint": "^7.2.0",
+    "lerna": "^3.22.0",
+    "lint-staged": "^10.2.9",
+    "next": "^9.4.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }

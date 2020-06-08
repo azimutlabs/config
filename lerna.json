@@ -1,18 +1,13 @@
 {
   "version": "independent",
-  "npmClient": "npm",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
   "command": {
     "publish": {
-      "ignoreChanges": ["*.md"],
-      "message": "chore(release): publish",
-      "registry": "https://registry.npmjs.com"
+      "message": "chore: publish release"
     },
-    "bootstrap": {
-      "ignore": "component-*",
-      "npmClientArgs": ["--no-package-lock"]
+    "version": {
+      "allowBranch": "master"
     }
-  },
-  "packages": [
-    "packages/*"
-  ]
+  }
 }

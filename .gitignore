@@ -53,6 +53,7 @@ typings/
 
 # Optional eslint cache
 .eslintcache
+**/.eslintcache
 
 # Microbundle cache
 .rpt2_cache/
@@ -82,6 +83,10 @@ typings/
 # Nuxt.js build / generate output
 .nuxt
 dist
+
+# Compilation output
+lib
+**/lib
 
 # Gatsby files
 .cache/

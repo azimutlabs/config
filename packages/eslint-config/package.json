@@ -2,15 +2,6 @@
   "name": "@azimutlabs/eslint-config",
   "version": "0.1.1",
   "description": "Sharable ESLint configurations used in our projects",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/azimutlabs/config.git",
-    "directory": "packages/eslint-config"
-  },
-  "main": "index.js",
-  "files": [
-    "*.js"
-  ],
   "keywords": [
     "config",
     "eslint",
@@ -18,13 +9,40 @@
     "eslint-config",
     "alabs"
   ],
-  "author": "AzimutLabs <npm@alabs.team>",
-  "license": "MIT",
+  "homepage": "https://github.com/azimutlabs/config/tree/master/packages/eslint-config#readme",
   "bugs": {
     "url": "https://github.com/azimutlabs/config/issues"
   },
-  "homepage": "https://github.com/azimutlabs/config/tree/master/packages/eslint-config#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azimutlabs/config.git",
+    "directory": "packages/eslint-config"
+  },
+  "license": "MIT",
+  "author": "AzimutLabs <npm@alabs.team>",
+  "main": "index.js",
+  "files": [
+    "*.js"
+  ],
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.1.0",
+    "@typescript-eslint/parser": "^3.1.0",
+    "babel-eslint": "^10.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-array-func": "^3.1.6",
+    "eslint-plugin-functional": "^3.0.1",
+    "eslint-plugin-import": "^2.21.1",
+    "eslint-plugin-jest": "^23.13.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.4",
+    "eslint-plugin-simple-import-sort": "^5.0.3",
+    "jest": "^26.0.1",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.5"
+  },
   "peerDependencies": {
-    "eslint": "^6.8.0"
+    "eslint": "^7.2.0"
   }
 }

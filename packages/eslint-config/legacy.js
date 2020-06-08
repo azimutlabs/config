@@ -1,65 +1,35 @@
-/**
- * Copyright (c) 2019 Azimut Labs
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- */
-
-'use strict';
-
 module.exports = {
   parser: 'babel-eslint',
   parserOptions: {
-    ecmaVersion: 6
+    ecmaVersion: 6,
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:array-func/all',
-    'plugin:functional/lite'
-  ],
-  plugins: [
-    'import',
-    'array-func',
-    'functional',
-    'simple-import-sort'
-  ],
+  extends: ['eslint:recommended', 'plugin:array-func/all', 'plugin:functional/lite'],
+  plugins: ['import', 'array-func', 'functional', 'simple-import-sort'],
   env: {
     commonjs: true,
     es6: true,
-    node: true
+    node: true,
   },
   overrides: [
     {
-      files: [
-        '**/*.d.ts'
-      ],
+      files: ['**/*.d.ts'],
       rules: {
-        'spaced-comment': 'off'
-      }
+        'spaced-comment': 'off',
+      },
     },
     {
-      files: [
-        '**/*.ts?(x)'
-      ],
+      files: ['**/*.ts?(x)'],
       parser: '@typescript-eslint/parser',
-      extends: [
-        'plugin:@typescript-eslint/recommended'
-      ],
+      extends: ['plugin:@typescript-eslint/recommended'],
       parserOptions: {
         ecmaVersion: 2018,
         sourceType: 'module',
         ecmaFeatures: {
-          jsx: true
+          jsx: true,
         },
-        warnOnUnsupportedTypeScriptVersion: true
+        warnOnUnsupportedTypeScriptVersion: true,
       },
-      plugins: [
-        '@typescript-eslint'
-      ],
+      plugins: ['@typescript-eslint'],
       rules: {
         'default-case': 'off',
         'no-dupe-class-members': 'off',
@@ -74,8 +44,8 @@ module.exports = {
             functions: false,
             classes: false,
             variables: false,
-            typedefs: false
-          }
+            typedefs: false,
+          },
         ],
         'no-unused-expressions': 'off',
         '@typescript-eslint/no-unused-expressions': [
@@ -83,21 +53,19 @@ module.exports = {
           {
             allowShortCircuit: true,
             allowTernary: true,
-            allowTaggedTemplates: true
-          }
+            allowTaggedTemplates: true,
+          },
         ],
         'no-unused-vars': 'off',
         '@typescript-eslint/no-unused-vars': [
           'warn',
           {
-            args: 'after-used'
-          }
+            args: 'after-used',
+          },
         ],
         'no-useless-constructor': 'off',
         '@typescript-eslint/no-useless-constructor': 'warn',
         '@typescript-eslint/adjacent-overload-signatures': 'error',
-        '@typescript-eslint/ban-ts-ignore': 'error',
-        '@typescript-eslint/camelcase': 'error',
         '@typescript-eslint/explicit-member-accessibility': 'error',
         '@typescript-eslint/member-ordering': 'error',
         '@typescript-eslint/no-extraneous-class': 'error',
@@ -108,11 +76,11 @@ module.exports = {
           {
             allowExpressions: true,
             allowTypedFunctionExpressions: true,
-            allowHigherOrderFunctions: true
-          }
-        ]
-      }
-    }
+            allowHigherOrderFunctions: true,
+          },
+        ],
+      },
+    },
   ],
   rules: {
     'import/first': 'error',
@@ -121,57 +89,46 @@ module.exports = {
     'import/newline-after-import': 'error',
     'import/no-webpack-loader-syntax': 'error',
     'simple-import-sort/sort': 'error',
+    'functional/no-return-void': 'off',
     'functional/immutable-data': [
       'error',
       {
-        'ignorePattern': 'module.exports',
-      }
+        ignoreAccessorPattern: ['module.exports', '*.defaultProps', '*.getInitialProps'],
+      },
     ],
     'functional/functional-parameters': [
       'error',
       {
-        'enforceParameterCount': false,
-      }
+        enforceParameterCount: false,
+      },
     ],
     'space-before-function-paren': [
       'error',
       {
         named: 'never',
         anonymous: 'always',
-        asyncArrow: 'always'
-      }
+        asyncArrow: 'always',
+      },
     ],
     'keyword-spacing': [
       'error',
       {
         after: true,
-        before: true
-      }
+        before: true,
+      },
     ],
     'prefer-destructuring': [
       'error',
       {
         array: true,
-        object: true
-      }
+        object: true,
+      },
     ],
-    'arrow-body-style': [
-      'error',
-      'as-needed'
-    ],
+    'arrow-body-style': ['error', 'as-needed'],
     'prefer-arrow-callback': 'error',
-    'spaced-comment': [
-      'error',
-      'always'
-    ],
-    'quote-props': [
-      'error',
-      'as-needed'
-    ],
-    semi: [
-      'error',
-      'always'
-    ],
+    'spaced-comment': ['error', 'always'],
+    'quote-props': ['error', 'as-needed'],
+    semi: ['error', 'always'],
     'no-console': 'warn',
     'no-debugger': 'warn',
     'newline-per-chained-call': 'error',
@@ -191,24 +148,15 @@ module.exports = {
     'default-case': [
       'warn',
       {
-        commentPattern: '^no default$'
-      }
+        commentPattern: '^no default$',
+      },
     ],
-    'dot-location': [
-      'warn',
-      'property'
-    ],
-    eqeqeq: [
-      'error',
-      'smart'
-    ],
+    'dot-location': ['warn', 'property'],
+    eqeqeq: ['error', 'smart'],
     'new-parens': 'warn',
     'no-array-constructor': 'warn',
     'no-caller': 'warn',
-    'no-cond-assign': [
-      'warn',
-      'except-parens'
-    ],
+    'no-cond-assign': ['warn', 'except-parens'],
     'no-control-regex': 'warn',
     'no-dupe-args': 'warn',
     'no-dupe-class-members': 'warn',
@@ -231,8 +179,8 @@ module.exports = {
       'warn',
       {
         allowLoop: true,
-        allowSwitch: false
-      }
+        allowSwitch: false,
+      },
     ],
     'no-lone-blocks': 'warn',
     'no-loop-func': 'warn',
@@ -240,36 +188,13 @@ module.exports = {
       'warn',
       {
         groups: [
-          [
-            '&',
-            '|',
-            '^',
-            '~',
-            '<<',
-            '>>',
-            '>>>'
-          ],
-          [
-            '==',
-            '!=',
-            '===',
-            '!==',
-            '>',
-            '>=',
-            '<',
-            '<='
-          ],
-          [
-            '&&',
-            '||'
-          ],
-          [
-            'in',
-            'instanceof'
-          ]
+          ['&', '|', '^', '~', '<<', '>>', '>>>'],
+          ['==', '!=', '===', '!==', '>', '>=', '<', '<='],
+          ['&&', '||'],
+          ['in', 'instanceof'],
         ],
-        allowSamePrecedence: false
-      }
+        allowSamePrecedence: false,
+      },
     ],
     'no-multi-str': 'warn',
     'no-native-reassign': 'warn',
@@ -284,14 +209,11 @@ module.exports = {
     'no-redeclare': [
       'warn',
       {
-        builtinGlobals: false
-      }
+        builtinGlobals: false,
+      },
     ],
     'no-regex-spaces': 'warn',
-    'no-restricted-syntax': [
-      'warn',
-      'WithStatement'
-    ],
+    'no-restricted-syntax': ['warn', 'WithStatement'],
     'no-script-url': 'warn',
     'no-self-assign': 'warn',
     'no-self-compare': 'warn',
@@ -308,23 +230,23 @@ module.exports = {
       {
         allowShortCircuit: true,
         allowTernary: true,
-        allowTaggedTemplates: true
-      }
+        allowTaggedTemplates: true,
+      },
     ],
     'no-unused-labels': 'warn',
     'no-unused-vars': [
       'warn',
       {
         args: 'after-used',
-      }
+      },
     ],
     'no-use-before-define': [
       'warn',
       {
         functions: false,
         classes: false,
-        variables: false
-      }
+        variables: false,
+      },
     ],
     'no-useless-computed-key': 'warn',
     'no-useless-concat': 'warn',
@@ -334,23 +256,14 @@ module.exports = {
       {
         ignoreDestructuring: false,
         ignoreImport: false,
-        ignoreExport: false
-      }
+        ignoreExport: false,
+      },
     ],
     'no-with': 'warn',
     'require-yield': 'warn',
-    'rest-spread-spacing': [
-      'warn',
-      'never'
-    ],
-    strict: [
-      'warn',
-      'never'
-    ],
-    'unicode-bom': [
-      'warn',
-      'never'
-    ],
+    'rest-spread-spacing': ['warn', 'never'],
+    strict: ['warn', 'never'],
+    'unicode-bom': ['warn', 'never'],
     'use-isnan': 'warn',
     'valid-typeof': 'warn',
     'no-restricted-properties': [
@@ -362,7 +275,7 @@ module.exports = {
       {
         object: 'System',
         property: 'import',
-      }
-    ]
-  }
+      },
+    ],
+  },
 };

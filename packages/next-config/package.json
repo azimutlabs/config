@@ -31,7 +31,16 @@
   "scripts": {
     "compile": "tsc"
   },
+  "eslintConfig": {
+    "extends": [
+      "@azimutlabs"
+    ]
+  },
+  "eslintIgnore": [
+    "lib"
+  ],
   "devDependencies": {
+    "@azimutlabs/eslint-config": "^0.2.0",
     "@types/node": "^12.12.44",
     "@types/webpack": "^4.41.17",
     "next": "^9.4.4",

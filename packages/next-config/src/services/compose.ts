@@ -15,19 +15,16 @@ export function compose<A extends Fn, B extends Fn, C extends Fn, D extends Fn>(
   a: A, b: B, c: C, d: D
 ): CFn<P<A> & P<B> & P<C> & P<D>, R<A> & R<B> & R<C> & R<D>>;
 export function compose<A extends Fn, B extends Fn, C extends Fn, D extends Fn, E extends Fn>(
-  a: A, b: B, c: C, d: D, e: D
-): CFn<P<A> & P<B> & P<C> & P<D> & P<E>, R<A> & R<B> & R<C> & R<D> & R<E>>;
-export function compose<A extends Fn, B extends Fn, C extends Fn, D extends Fn, E extends Fn>(
-  a: A, b: B, c: C, d: D, e: D
+  a: A, b: B, c: C, d: D, e: E
 ): CFn<P<A> & P<B> & P<C> & P<D> & P<E>, R<A> & R<B> & R<C> & R<D> & R<E>>;
 export function compose<A extends Fn, B extends Fn, C extends Fn, D extends Fn, E extends Fn, F extends Fn>(
-  a: A, b: B, c: C, d: D, e: D, f: F
+  a: A, b: B, c: C, d: D, e: E, f: F
 ): CFn<P<A> & P<B> & P<C> & P<D> & P<E> & P<F>, R<A> & R<B> & R<C> & R<D> & R<E> & R<F>>;
 export function compose<A extends Fn, B extends Fn, C extends Fn, D extends Fn, E extends Fn, F extends Fn, G extends Fn>(
-  a: A, b: B, c: C, d: D, e: D, f: F, g: G
+  a: A, b: B, c: C, d: D, e: E, f: F, g: G
 ): CFn<P<A> & P<B> & P<C> & P<D> & P<E> & P<F> & P<G>, R<A> & R<B> & R<C> & R<D> & R<E> & R<F> & R<G>>;
 export function compose<A extends Fn, B extends Fn, C extends Fn, D extends Fn, E extends Fn, F extends Fn, G extends Fn, H extends Fn>(
-  a: A, b: B, c: C, d: D, e: D, f: F, g: G, h: H
+  a: A, b: B, c: C, d: D, e: E, f: F, g: G, h: H
 ): CFn<P<A> & P<B> & P<C> & P<D> & P<E> & P<F> & P<H> & P<G>, R<A> & R<B> & R<C> & R<D> & R<E> & R<F> & R<G> & R<H>>;
 /* eslint-enable prettier/prettier */
 

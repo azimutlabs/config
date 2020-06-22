@@ -1,6 +1,6 @@
 {
   "name": "@azimutlabs/next-config",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Next.js configuration extensions",
   "keywords": [
     "config",
@@ -40,7 +40,7 @@
     "lib"
   ],
   "devDependencies": {
-    "@azimutlabs/eslint-config": "^0.2.1",
+    "@azimutlabs/eslint-config": "^0.2.2",
     "@types/node": "^12.12.44",
     "@types/webpack": "^4.41.17",
     "next": "^9.4.4",

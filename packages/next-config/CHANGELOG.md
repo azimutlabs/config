@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/azimutlabs/config/compare/@azimutlabs/next-config@0.2.1...@azimutlabs/next-config@0.2.3) (2020-06-22)
+
+
+### Bug Fixes
+
+* compile before publish ([e25af69](https://github.com/azimutlabs/config/commit/e25af6923076871db9325e0e1c074576f8e3fd04))
+
+
+
+
+
 ## [0.2.1](https://github.com/azimutlabs/config/compare/@azimutlabs/next-config@0.2.0...@azimutlabs/next-config@0.2.1) (2020-06-19)
 
 

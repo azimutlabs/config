@@ -61,6 +61,7 @@ module.exports = {
           'warn',
           {
             args: 'after-used',
+            argsIgnorePattern: '^_',
           },
         ],
         'no-useless-constructor': 'off',
@@ -238,6 +239,7 @@ module.exports = {
       'warn',
       {
         args: 'after-used',
+        argsIgnorePattern: '^_',
       },
     ],
     'no-use-before-define': [

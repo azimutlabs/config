@@ -9,6 +9,7 @@
     src="https://img.shields.io/github/license/azimutlabs/config"
     alt="azimutlabs/config repository license"
   />
+  DEPRECATED! Visit https://github.com/azimutlabs/eslint instead.
 </h1>
 
 > Our sharable configurations and code standards
